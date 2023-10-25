@@ -13,8 +13,27 @@
  * from reset.css
  *
  */
+ /****** Screen reader text *******/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+html {
+  font-size: 1.2rem;
+}
+
 body {
   color: #242121;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: darkgreen;
 
   /* 1. Set the font family and colours */
 
@@ -31,6 +50,9 @@ body {
   /* 3. Set the flex direction to column */
 
   /* 4. Set the justify content to space between */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 
@@ -41,6 +63,9 @@ body {
 
 header {
   padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   /* header is both a flexbox item and a flexbox container */
   /* 5. Set the display to flex */
@@ -52,10 +77,16 @@ header {
 
 header .header--banner--logo {
   /* 8. Set the height of the image (I used 2.2rem but you can use whatevs) */
+  height: 2.4rem;
 
 }
 
 header .header--banner--nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
   /* Another flexbox container */
   /* 9. Set the display to flex */
 
@@ -70,12 +101,18 @@ header .header--banner--nav ul {
 }
 
 header nav.header--banner--nav ul li a {
+  font-size: 1rem;
+  color: #0e3240;
+  text-decoration: none;
+  font-weight: 900;
   /* 14. Set the font size, colour, text decoration, and font weight
          to make your links look nice
    */
 }
 
 header nav.header--banner--nav ul li a:hover {
+  color:chocolate;
+  text-decoration: underline;
   /* 15. Set the hover colour to something nice */
 
   /* 16. Set the hover text decoration to underline */
@@ -109,7 +146,7 @@ main {
   */
   /* 17. Set the align self to center */
 
-
+  align-self: center;
   /* Set a minimum width for our "box" */
   min-width: 550px;
   margin: 1rem;
@@ -117,6 +154,10 @@ main {
 }
 
 main h1 {
+  margin: 20px 0px 60px 0px;
+  font-size: 1.8rem;
+  letter-spacing: -2px;
+  text-align: center;
   /* 18. Make the h1 look good using margin, font size,
          letter spacing, font weight and text-align
   */
@@ -126,12 +167,14 @@ main h1 {
 .main--img {
   /* Margin 0 auto is a cool trick to center an element */
   margin: 0 auto;
+  height: 200px;
 
   /* 19. Set the height of the image */
 
 }
 
 .main--form {
+  display: flex;
   /* We use flex on the form so the input and submit are side by side */
   /* 20. Set the display to flex */
 
@@ -139,6 +182,8 @@ main h1 {
 
 /* We use flex-grow to make the input text take up the rest of the space */
 .main--form input {
+  flex-grow: 1;
+
   margin: 0 auto;
   padding: 1.5rem 2rem;
   background-color: rgb(255, 255, 255);
@@ -176,6 +221,8 @@ main h1 {
 
  footer {
   color: #f1faee;
+  background-color: #1d3557;
+  
 
   /* 22. Add a background-colour (I used ##1d3557) */
 
@@ -185,6 +232,11 @@ main h1 {
 }
 
 footer .footer--nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 2rem;
   list-style-type: none;
   margin: 0px;
   padding: 0px;
@@ -224,19 +276,3 @@ footer .footer--nav ul li a {
 
 
 
-/****** Screen reader text *******/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-html {
-  font-size: 1.2rem;
-}
